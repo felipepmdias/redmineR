@@ -58,6 +58,8 @@ redmine_document_categories <- function() {
   redmine_get_all_pages("enumerations/document_categories")
 }
 
+#' @rdname redmine_trackers
+#' @export
 redmine_list_versions = function (project_id) {
   redmine_get_all_pages(paste0("/projects/",project_id,"/versions"), query = NULL)
 }
