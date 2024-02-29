@@ -57,3 +57,7 @@ redmine_time_entry_activities <- function() {
 redmine_document_categories <- function() {
   redmine_get_all_pages("enumerations/document_categories")
 }
+
+redmine_list_versions = function (project_id) {
+  redmine_get_all_pages(paste0("/projects/",project_id,"/versions"), query = NULL)
+}
