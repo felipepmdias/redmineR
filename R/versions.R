@@ -1,3 +1,5 @@
+
+#' @export
 redmine_create_version <- function(project_id, name, description = NULL, status = "open" , ...) {
 
   #  fileTokens <- sapply(files, redmine_upload)
@@ -24,8 +26,9 @@ redmine_create_version <- function(project_id, name, description = NULL, status 
   issueRes$content$version$id
 }
 
+#' @export
 redmine_list_versions = function (project_id) {
-  redmine_get(paste0("/projects/",project_id,"/versions"), query = NULL)
+  redmine_get_all_pages(paste0("/projects/",project_id,"/versions"), query = NULL)
 }
 
 
@@ -40,5 +43,5 @@ redmine_list_versions = function (project_id) {
 #' @export
 redmine_show_version = function (version_id) {
   endpoint = paste0("versions/", version_id, ".json")
-  redmine_get(endpoint = endpoint)
+  redmine_get_all_pages(endpoint = endpoint)
 }
